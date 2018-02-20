@@ -1,0 +1,280 @@
+<!DOCTYPE>
+<html lang="en">
+
+<!--Dale Herring-->
+
+<head>
+ <title> Review Table </title>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta name="robots" content="noindex, nofollow">
+  
+  <link rel="stylesheet" href="ReviewTable.css">
+  
+ <script>
+ function jsLoad()
+ {
+	var defPrice1 = 15.79;
+	var defPrice2 = 20.15;
+	var defPrice3 = 13.47;
+	var defPrice4 = 14.99;
+	var defText1 = "Grumpy Cat";
+	var defText2 = "Aliens Fanatic";
+	var defText3 = "Imperial March";
+	var defText4 = "Buff Gaga";
+ 
+	unitprice1.value = defPrice1.toFixed(2);
+	unitprice2.value = defPrice2.toFixed(2);
+	unitprice3.value = defPrice3.toFixed(2);
+	unitprice4.value = defPrice4.toFixed(2);
+ 
+	text1.value = defText1;
+	text2.value = defText2;
+	text3.value = defText3;
+	text4.value = defText4;
+ 
+	quantity1.value = 0;
+	quantity2.value = 0;
+	quantity3.value = 0;
+	quantity4.value = 0;
+ }
+ function ttlKeyChange()
+ {
+	var ttl1 = quantity1.value * unitprice1.value;
+	totalprice1.value = ttl1.toFixed(2);
+	var ttl2 = quantity2.value * unitprice2.value;
+	totalprice2.value = ttl2.toFixed(2);
+	var ttl3 = quantity3.value * unitprice3.value;
+	totalprice3.value = ttl3.toFixed(2);
+	var ttl4 = quantity4.value * unitprice4.value;
+	totalprice4.value = ttl4.toFixed(2);
+ }
+ function calcFunc()
+ {
+	var ttl1 = quantity1.value * unitprice1.value;
+	totalprice1.value = ttl1.toFixed(2);
+	var ttl2 = quantity2.value * unitprice2.value;
+	totalprice2.value = ttl2.toFixed(2);
+	var ttl3 = quantity3.value * unitprice3.value;
+	totalprice3.value = ttl3.toFixed(2);
+	var ttl4 = quantity4.value * unitprice4.value;
+	totalprice4.value = ttl4.toFixed(2);
+	
+	var subTotal = ttl1 + ttl2 + ttl3 + ttl4;
+	subtotalbox.value = subTotal.toFixed(2);
+	
+	var delivCost = delivmethbox.value * subTotal;
+	delivcostbox.value = delivCost.toFixed(2);
+	
+	var gTtl = subTotal + delivCost;
+	grandttlbox.value = gTtl.toFixed(2);
+ }
+ 
+ window.onload = jsLoad;
+ 
+ </script>
+ 
+ </head>
+ <body>
+ 
+ <main>
+ 
+ <form name="reviewtable">
+ 
+ <table border="2">
+ 
+ <tr>
+ <td colspan="6">
+ <h1> T-Shirt Order Form </h1>
+ </td>
+ </tr>
+ <tr id="top">
+ <th>
+ Image
+ </th>
+ <th>
+ Text
+ </th>
+ <th>
+ Size
+ </th>
+ <th>
+ Quantity
+ </th>
+ <th>
+ Unit Price
+ </th>
+ <th>
+ Total Price
+ </th>
+ </tr>
+ 
+ <tr>
+ <td class="purple">
+ <img src="GrumpyCatVampireMovie.jpg" width="100" height="100" title="GrumpyCatVampireMovie" alt="GrumpyCatVampireMovie">
+ </td>
+ <td>
+ <input type="text" id="text1" class="noborder" readonly>
+ </td>
+ <td>
+ <select size="1" id="size1">
+ <option selected value="Select Size"> Select Size </option>
+ <option value="Small"> Small </option>
+ <option value="Medium"> Medium </option>
+ <option value="Large"> Large </option>
+ <option value="X-Large"> X-Large </option>
+ </select>
+ </td>
+ <td style="text-align:center">
+ <input type="text" id="quantity1" size="10" onkeyup="ttlKeyChange()">
+ </td>
+ <td>
+ <input type="text" id="unitprice1" class="noborder" readonly>
+ </td>
+ <td style="text-align:center">
+ <input type="text" id="totalprice1" readonly class="ttlpriceboxcss">
+ </td>
+ </tr>
+ 
+ <tr>
+ <td class="blue">
+ <img src="AncientAliensAliens.jpg" width="100" height="124" title="AncientAliensAliens" alt="AncientAliensAliens">
+ </td>
+ <td>
+ <input type="text" id="text2" class="noborder" readonly>
+ </td>
+ <td>
+ <select size="1" id="size2">
+ <option selected value="Select Size"> Select Size </option>
+ <option value="Small"> Small </option>
+ <option value="Medium"> Medium </option>
+ <option value="Large"> Large </option>
+ <option value="X-Large"> X-Large </option>
+ </select>
+ </td>
+ <td style="text-align:center">
+ <input type="text" id="quantity2" size="10" onkeyup="ttlKeyChange()">
+ </td>
+ <td>
+ <input type="text" id="unitprice2" class="noborder" readonly>
+ </td>
+ <td style="text-align:center">
+ <input type="text" id="totalprice2" readonly class="ttlpriceboxcss">
+ </td>
+ </tr>
+ 
+ <tr>
+ <td class="gray">
+ <img src="SWVaderEpicMusic.png" width="100" height="113" title="SWVaderEpicMusic.png" alt="SWVaderEpicMusic.png">
+ </td>
+ <td>
+ <input type="text" id="text3" class="noborder" readonly>
+ </td>
+ <td>
+ <select size="1" id="size3">
+ <option selected value="Select Size"> Select Size </option>
+ <option value="Small"> Small </option>
+ <option value="Medium"> Medium </option>
+ <option value="Large"> Large </option>
+ <option value="X-Large"> X-Large </option>
+ </select>
+ </td>
+ <td style="text-align:center">
+ <input type="text" id="quantity3" size="10" onkeyup="ttlKeyChange()">
+ </td>
+ <td>
+ <input type="text" id="unitprice3" class="noborder" readonly>
+ </td>
+ <td style="text-align:center">
+ <input type="text" id="totalprice3" readonly class="ttlpriceboxcss">
+ </td>
+ </tr>
+ 
+ <tr>
+ <td class="pink">
+ <img src="GagaMuscle.jpg" width="100" height="110" title="GagaMuscle" alt="GagaMuscle">
+ </td>
+ <td>
+ <input type="text" id="text4" class="noborder" readonly>
+ </td>
+ <td>
+ <select size="1" id="size4">
+ <option selected value="Select Size"> Select Size </option>
+ <option value="Small"> Small </option>
+ <option value="Medium"> Medium </option>
+ <option value="Large"> Large </option>
+ <option value="X-Large"> X-Large </option>
+ </select>
+ </td>
+ <td style="text-align:center">
+ <input type="text" id="quantity4" size="10" onkeyup="ttlKeyChange()">
+ </td>
+ <td>
+ <input type="text" id="unitprice4" class="noborder" readonly>
+ </td>
+ <td style="text-align:center">
+ <input type="text" id="totalprice4" readonly class="ttlpriceboxcss">
+ </td>
+ </tr>
+ 
+ <tr>
+ <td colspan="4">
+ </td>
+ <td style="text-align:right;">
+ <label for="subtotalbox"> Sub-Total: </label>
+ </td>
+ <td>
+ <input type="text" id="subtotalbox" readonly class="billpricecss">
+ </td>
+ </tr>
+ 
+ <tr>
+ <td colspan="4" style="text-align:right;">
+ <label for="delivmethbox"> Delivery Method </label>
+ <select size="1" id="delivmethbox">
+ <option value="0"> pick up in store </option>
+ <option selected value="0.284"> regular </option>
+ <option value="0.397"> 3-day </option>
+ <option value="0.479"> 1-day </option>
+ </select>
+ </td>
+ <td style="text-align:right;">
+ <label for="delivcostbox"> Delivery Cost: </label>
+ </td>
+ <td>
+ <input type="text" id="delivcostbox" readonly class="billpricecss">
+ </td>
+ </tr>
+ 
+ <tr>
+ <td colspan="4">
+ </td>
+ <td style="text-align:right;">
+ <label for="grandttlbox"> Grand Total: </label>
+ </td>
+ <td>
+ <input type="text" id="grandttlbox" readonly class="billpricecss">
+ </td>
+ </tr>
+ 
+ <tr>
+ <td colspan="6" style="text-align:center">
+ <input type="button" name="calcbtn" value="Calculate Grand Total" onclick="calcFunc()" class="btncss1">
+ </td>
+ </tr>
+ <tr>
+ <td colspan="6" style="text-align:center">
+ <input type="reset" name="resetbtn" value="Clear Form" class="btncss2">
+ </td>
+ </tr>
+ <tr>
+ <td style="text-align:right">
+ <a href="#top" style="font-size:small"> Return to the top </a>
+ </td>
+ </tr>
+ 
+ </table>
+ </form>
+ </main>
+ </body>
+ </html>
